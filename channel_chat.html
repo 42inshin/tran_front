@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/default.css" />
+    <style>
+      .right_sidebar {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 293px;
+        height: 730px;
+        background: var(--main-bg);
+        border-radius: 30px 0 0 30px;
+        box-shadow: -10px 10px 30px 0 rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .channel_nav {
+        position: relative;
+        height: 50px;
+        padding: 20px 20px 12px;
+        display: flex;
+        align-items: center;
+      }
+      .channel_nav button {
+        position: relative;
+        width: 18px;
+        height: 18px;
+        background: none;
+        cursor: pointer;
+      }
+      .channel_nav button.angle_btn span {
+        position: absolute;
+        left: 5px;
+        top: 0px;
+        display: block;
+        width: 2px;
+        height: 12px;
+        background: var(--white);
+      }
+      .channel_nav button.angle_btn span:first-child {
+        transform: rotate(45deg);
+      }
+      .channel_nav button.angle_btn span:last-child {
+        transform: rotate(-45deg);
+        top: 8px;
+      }
+
+      .channel_nav .title {
+        font-size: 18px;
+        max-width: 210px;
+      }
+
+      .channel_nav button.burger_btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 18px;
+        height: 18px;
+      }
+      .channel_nav button.burger_btn span {
+        position: absolute;
+        top: 8px;
+        right: 0;
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: var(--white);
+      }
+      .channel_nav button.burger_btn span:nth-child(1) {
+        top: 2px;
+      }
+      .channel_nav button.burger_btn span:nth-child(2) {
+        top: 8px;
+      }
+      .channel_nav button.burger_btn span:nth-child(3) {
+        top: 14px;
+      }
+
+      .chat_box {
+        position: absolute;
+        bottom: 80px;
+        left: 0;
+        max-height: 600px;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      .chat_box li {
+        display: flex;
+        padding: 6px 20px;
+      }
+      .chat_box li:hover {
+        background: var(--main);
+      }
+      .chat_box li a {
+        width: 40px;
+        height: 40px;
+      }
+      .chat_box .img_box {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--white);
+        border-radius: 20px;
+      }
+      .chat_box .nickname {
+        font-size: 14px;
+        font-weight: 700;
+        margin-left: 10px;
+      }
+      .chat_box .time {
+        font-size: 12px;
+        color: var(--offline);
+        font-weight: 300;
+      }
+      .chat_box .text {
+        margin-left: 10px;
+        margin-top: 6px;
+        font-size: 14px;
+        color: #ddd;
+        line-height: 18px;
+      }
+
+      .chat_input_box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: #2f3153;
+        padding: 20px 22px 30px;
+        display: flex;
+        align-items: center;
+      }
+      .chat_input_box input {
+        width: 210px;
+        max-width: 210px;
+        height: 24px;
+        background: #3a3c5e;
+        border-radius: 50px;
+        text-align: left;
+        padding: 2px 12px;
+      }
+      .chat_input_box button {
+        width: 30px;
+        height: 30px;
+        margin-left: 4px;
+        background: var(--game);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat" class="right_sidebar">
+      <div class="channel_nav">
+        <button class="angle_btn" onclick="closeChat()">
+          <span></span>
+          <span></span>
+        </button>
+        <div class="title text_nowrap">﹟ 채널001asdfasdfaaaaaasdfasdas</div>
+        <button class="burger_btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <ul class="chat_box">
+        <li>
+          <a href="#">
+            <div class="img_box">
+              <img src="../image/profile.png" alt="profile image" />
+            </div>
+          </a>
+          <div class="chat_info">
+            <span class="nickname">yuchoi</span>
+            <span class="time">17:42</span>
+            <p class="text">반갑습니닷! :D</p>
+          </div>
+        </li>
+      </ul>
+      <div class="chat_input_box">
+        <input type="text" placeholder="메시지 보내기" onkeyup="sendMessage()" />
+        <button onclick="addMessage()"><img src="../image/send.svg" alt="" /></button>
+      </div>
+    </div>
+    <script>
+      function scrollToBottom() {
+        const messageWindow = document.querySelector(".chat_box");
+        messageWindow.scrollTop = messageWindow.scrollHeight;
+      }
+
+      function addMessage() {
+        const ul = document.querySelector(".chat_box");
+        const input = document.querySelector(".chat_input_box input");
+        let content = `
+			<li>
+				<a href="#">
+					<div class="img_box">
+						<img src="../image/profile.png" alt="profile image">
+					</div>
+				</a>
+				<div class="chat_info">
+					<span class="nickname">yuchoi</span>
+					<span class="time">17:42</span>
+					<p class="text">${input.value}</p>
+				</div>
+			</li>
+		`;
+        ul.insertAdjacentHTML("beforeend", content);
+        input.value = "";
+      }
+
+      function sendMessage() {
+        const input = document.querySelector(".chat_input_box input");
+        if (window.event.keyCode == 13 && input.value !== "") addMessage();
+        scrollToBottom();
+      }
+
+      function closeChat() {
+        const chat = document.getElementById("chat");
+        chat.remove();
+      }
+    </script>
+  </body>
+</html>

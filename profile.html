@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/default.css" />
+    <style>
+      .profile_box {
+        position: relative;
+        width: 322px;
+        height: 200px;
+        padding: 30px 42px;
+        background: var(--main);
+      }
+      .profile .level {
+        color: var(--gold);
+        font-weight: 700;
+      }
+      .profile .nickname {
+        font-weight: 700;
+        margin-top: 4px;
+      }
+      .profile .profile_contents {
+        display: flex;
+        justify-content: space-between;
+      }
+      .profile .score_box {
+        margin-top: 20px;
+      }
+      .profile .game_type {
+        color: #ddd;
+      }
+      .profile .game_type .score_icon {
+        margin-right: 4px;
+      }
+      .profile .score {
+        margin-top: 4px;
+        margin-bottom: 10px;
+        max-width: 130px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .profile .profile_img {
+        width: 100px;
+        border: 2px solid var(--white);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile_box box">
+      <div class="profile">
+        <p class="level fz12">lv. 123</p>
+        <p class="nickname fz20">inshin</p>
+        <div class="profile_contents">
+          <div class="score_box">
+            <div class="rank_score">
+              <p class="game_type fz12"><span class="score_icon">🏆</span>랭크</p>
+              <p class="score">
+                <span class="fz12">승</span><span>119 </span><span class="fz12">패</span
+                ><span>123</span>
+              </p>
+            </div>
+            <div class="normal_score">
+              <p class="game_type fz12"><span class="score_icon">🏓</span>일반</p>
+              <p class="score">
+                <span class="fz12">승</span><span>10 </span><span class="fz12">패</span
+                ><span>1</span>
+              </p>
+            </div>
+          </div>
+          <div class="profile_img">
+            <img src="../image/profile2.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

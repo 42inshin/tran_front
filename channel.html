@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/default.css" />
+    <style>
+      .right_sidebar {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 293px;
+        height: 730px;
+        background: var(--main-bg);
+        border-radius: 30px 0 0 30px;
+        box-shadow: -10px 10px 30px 0 rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .channel_nav {
+        position: relative;
+        height: 50px;
+        padding: 20px 20px 12px;
+        display: flex;
+        align-items: center;
+      }
+      .channel_nav button {
+        position: relative;
+        width: 18px;
+        height: 18px;
+        background: none;
+        cursor: pointer;
+        display: none;
+      }
+      .channel_nav button.angle_btn span {
+        position: absolute;
+        left: 5px;
+        top: 0px;
+        display: block;
+        width: 2px;
+        height: 12px;
+        background: var(--white);
+      }
+      .channel_nav button.angle_btn span:first-child {
+        transform: rotate(45deg);
+      }
+      .channel_nav button.angle_btn span:last-child {
+        transform: rotate(-45deg);
+        top: 8px;
+      }
+
+      .channel_nav .title {
+        font-size: 18px;
+        max-width: 210px;
+      }
+
+      .channel_nav button.burger_btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 18px;
+        height: 18px;
+      }
+      .channel_nav button.burger_btn span {
+        position: absolute;
+        top: 8px;
+        right: 0;
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: var(--white);
+      }
+      .channel_nav button.burger_btn span:nth-child(1) {
+        top: 2px;
+      }
+      .channel_nav button.burger_btn span:nth-child(2) {
+        top: 8px;
+      }
+      .channel_nav button.burger_btn span:nth-child(3) {
+        top: 14px;
+      }
+
+      .channel_list {
+        position: relative;
+        padding: 10px 20px;
+        max-height: 660px;
+        overflow-x: hidden;
+      }
+      .channel_list li a {
+        display: block;
+        height: 32px;
+        padding: 6px 16px;
+        border-radius: 16px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .channel_list li a:hover {
+        background: var(--main);
+      }
+      .private {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="right_sidebar">
+      <div class="channel_nav">
+        <button class="angle_btn">
+          <span></span>
+          <span></span>
+        </button>
+        <div class="title">﹟ 채널</div>
+        <button class="burger_btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <ul class="channel_list">
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private on"></span>채널 001asdfasdfaaaaaasdfasdas</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+        <li>
+          <a href="#"><span class="private"></span>채널 001</a>
+        </li>
+      </ul>
+    </div>
+    <script>
+      const cnnList = document.querySelectorAll(".channel_list span.private");
+      cnnList.forEach((element) => {
+        if (element.classList.contains("on")) element.innerHTML = "🔒";
+        else element.innerHTML = "﹟";
+      });
+    </script>
+  </body>
+</html>

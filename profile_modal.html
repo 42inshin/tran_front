@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/default.css" />
+    <style>
+      .profile_modal {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        padding: 30px 35px;
+        background: var(--notice);
+      }
+      .level {
+        color: var(--gold);
+        font-weight: 700;
+      }
+      .nickname {
+        font-weight: 700;
+        margin-top: 4px;
+      }
+      .ben {
+        position: absolute;
+        top: 30px;
+        right: 35px;
+        border-bottom: 1px solid var(--white);
+        font-size: 14px;
+      }
+      .profile_contents {
+        display: flex;
+        justify-content: space-between;
+      }
+      .score_box {
+        margin-top: 20px;
+      }
+      .game_type {
+        color: #ddd;
+      }
+      .game_type .score_icon {
+        margin-right: 4px;
+      }
+
+      .score {
+        margin-top: 4px;
+        margin-bottom: 10px;
+        max-width: 130px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .profile_img {
+        width: 100px;
+        border: 2px solid var(--white);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .profile_action_box {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 122px;
+        background: var(--main);
+        border-radius: 0 0 30px 30px;
+        padding: 30px 22px 30px 35px;
+      }
+      .profile_action_box ul {
+        position: relative;
+        width: 165px;
+        font-size: 14px;
+      }
+      .profile_action_box ul li {
+        position: relative;
+        width: 50%;
+        float: left;
+        text-decoration: underline;
+        margin-bottom: 8px;
+      }
+      .profile_action_box button {
+        position: absolute;
+        right: 22px;
+        bottom: 25px;
+        width: 80px;
+        height: 80px;
+        border-radius: 15px;
+        background: var(--notice2);
+      }
+      .profile_action_box button .send_img {
+        width: 36px;
+        margin-top: 4px;
+        margin-left: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile_modal box">
+      <div class="profile">
+        <p class="level fz12">lv. 123</p>
+        <p class="nickname fz20">inshin</p>
+        <a class="ben" href="#">강제 퇴장</a>
+        <div class="profile_contents">
+          <div class="score_box">
+            <div class="rank_score">
+              <p class="game_type fz12"><span class="score_icon">🏆</span>랭크</p>
+              <p class="score">
+                <span class="fz12">승</span><span>119 </span><span class="fz12">패</span
+                ><span>123</span>
+              </p>
+            </div>
+            <div class="normal_score">
+              <p class="game_type fz12"><span class="score_icon">🏓</span>일반</p>
+              <p class="score">
+                <span class="fz12">승</span><span>10 </span><span class="fz12">패</span
+                ><span>1</span>
+              </p>
+            </div>
+          </div>
+          <div class="profile_img">
+            <img src="../image/profile2.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="profile_action_box">
+        <ul>
+          <li><a href="#">대전신청</a></li>
+          <li><a href="#">전적보기</a></li>
+          <li><a href="#">친구추가</a></li>
+          <li><a href="#">친구차단</a></li>
+          <li><a href="#">채팅차단</a></li>
+          <li><a href="#">매니저권한</a></li>
+        </ul>
+        <button class="fz12">
+          Message
+          <div class="send_img"><img src="../image/send.svg" alt="" /></div>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

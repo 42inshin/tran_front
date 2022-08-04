@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/default.css" />
+    <style>
+      .wrapper {
+        min-width: 1240px;
+        width: 1240px;
+        height: 824px;
+        display: flex;
+        overflow: hidden;
+      }
+      .left_sidebar {
+        width: 397px;
+        height: 100%;
+        padding: 30px 30px 30px 45px;
+      }
+      .main {
+        width: 843px;
+        height: 100%;
+        background: var(--main);
+      }
+    </style>
+
+    <style>
+      .user_list_box {
+        margin-top: 30px;
+      }
+      .user_list_btn {
+        margin-bottom: 12px;
+      }
+      .user_list_btn button {
+        font-size: 18px;
+        padding: 10px 20px;
+        background: var(--main);
+      }
+      .user_list_btn button:first-child {
+        margin-left: 20px;
+        margin-right: 10px;
+      }
+      .user_list_btn button.on {
+        background: var(--notice2);
+      }
+      .box {
+        position: relative;
+        background: var(--main);
+        width: 310px;
+        height: 420px;
+        padding: 30px 30px 35px;
+      }
+      .search_box {
+        position: absolute;
+        bottom: 35px;
+        left: 30px;
+        width: 250px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+      }
+      .search_box input {
+        background: #454768;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 300;
+        width: 185px;
+        height: 30px;
+        display: none;
+      }
+      .search_box input.on {
+        display: block;
+      }
+
+      .search_btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: var(--notice);
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+      }
+      .search_img {
+        width: 32px;
+        margin: 0 auto;
+      }
+      .user_list li {
+        height: 36px;
+      }
+      .user_list li:active {
+        background: var(--notice);
+        border-radius: 50px;
+      }
+
+      .user_list li a {
+        padding: 3px 5px;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+      }
+
+      .profile_img {
+        display: inline-block;
+        position: relative;
+        width: 30px;
+        border: 1px solid var(--white);
+        border-radius: 50%;
+      }
+
+      .nickname {
+        margin-left: 12px;
+        position: relative;
+        display: inline-block;
+      }
+      .nickname::before {
+        content: "";
+        position: absolute;
+        left: -22px;
+        top: 2px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--active);
+      }
+      .nickname::after {
+        content: "";
+        position: absolute;
+        left: -20px;
+        top: 4px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .user_list li.online .nickname::after {
+        background: var(--online);
+      }
+      .user_list li.play .nickname::after {
+        background: var(--play);
+      }
+      .user_list li.offline {
+        opacity: 0.5;
+      }
+      .user_list li.offline .nickname::after {
+        background: var(--offline);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="left_sidebar">
+        <div class="user_list_box">
+          <div class="user_list_btn">
+            <button onclick="allBtnClick()" class="all btn15 on">ALL</button>
+            <button onclick="friendBtnClick()" class="friend btn15">FRIEND</button>
+          </div>
+          <div class="box">
+            <ul class="user_list">
+              <li class="online">
+                <a href="#">
+                  <div class="profile_img"><img src="../image/profile.png" alt="profile" /></div>
+                  <p class="nickname">inshin</p>
+                </a>
+              </li>
+              <li class="offline">
+                <a href="#">
+                  <div class="profile_img"><img src="../image/profile2.png" alt="profile" /></div>
+                  <p class="nickname">kyukim</p>
+                </a>
+              </li>
+              <li class="play">
+                <a href="#">
+                  <div class="profile_img"><img src="../image/profile4.png" alt="profile" /></div>
+                  <p class="nickname">junselee</p>
+                </a>
+              </li>
+              <li class="offline">
+                <a href="#">
+                  <div class="profile_img"><img src="../image/profile3.png" alt="profile" /></div>
+                  <p class="nickname">gunkim</p>
+                </a>
+              </li>
+            </ul>
+
+            <div class="search_box">
+              <input
+                onkeyup="searchFilter()"
+                id="search"
+                type="text"
+                placeholder="닉네임을 적어주세요"
+              />
+              <button onclick="searchBtnClick()" class="search_btn">
+                <div class="search_img"><img src="../image/search.svg" alt="search icon" /></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main"></div>
+    </div>
+    <script>
+      // all, friend btn
+      const allBtn = document.querySelector(".user_list_btn .all");
+      const friendBtn = document.querySelector(".user_list_btn .friend");
+
+      function allBtnClick() {
+        allBtn.classList.add("on");
+        friendBtn.classList.remove("on");
+      }
+
+      function friendBtnClick() {
+        friendBtn.classList.add("on");
+        allBtn.classList.remove("on");
+      }
+
+      // search btn
+      function searchBtnClick() {
+        const searchInput = document.getElementById("search");
+        const searchBox = document.querySelector(".box");
+        const searchBtn = document.querySelector("button.search_btn");
+
+        if (!searchInput.classList.contains("on")) {
+          searchInput.classList.add("on");
+          searchInput.value = "";
+          searchInput.focus();
+        } else if (searchInput.value === "") searchInput.classList.remove("on");
+      }
+
+      function searchFilter() {
+        const inputValue = document.getElementById("search").value.toLowerCase();
+        const userList = document.querySelectorAll("ul.user_list > li");
+
+        for (let i = 0; i < userList.length; i++) {
+          let nickname = userList[i].querySelector("p.nickname").innerHTML.toLowerCase();
+          if (nickname.includes(inputValue)) userList[i].style.display = "block";
+          else userList[i].style.display = "none";
+        }
+      }
+
+      // 검색 창 말고 다른 곳 클릭했을 때,
+      // searchInput.addEventListener("blur", () => {
+      // 	if (searchInput.value === "")
+      // 		searchInput.classList.remove("on");
+      // });
+    </script>
+  </body>
+</html>
