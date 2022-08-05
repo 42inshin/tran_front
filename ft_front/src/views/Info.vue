@@ -39,7 +39,7 @@ onBeforeMount(async () => {
       })
     .then(res => {
       user.value = res.data;
-      user.value.avatarPath = "http://localhost:7000/" + res.data.avatarPath;
+      user.value.avatarPath = "http://localhost:5000/" + res.data.avatarPath;
       console.log(user.value);
       if (user.value.isTwoFactorAuthenticationEnabled)
       {
@@ -55,7 +55,7 @@ onBeforeMount(async () => {
         console.log(error);
         console.log(`api GET /users error`);
     })
-  
+
 })
 
 /* png로 받아서 QRcode uri src 만드는건데 개삽질한거임 필요없지만 놔둠
@@ -108,14 +108,14 @@ async function updateAvatar() {
       })
     .then(res => {
         store.data.avatarPath = "about:blank";
-        setTimeout(() => { store.data.avatarPath = "http://localhost:7000/" + res.data }, 0)
+        setTimeout(() => { store.data.avatarPath = "http://localhost:5000/" + res.data }, 0)
         console.log("ok");
     })
     .catch(error => {
         console.log(error);
         console.log("nk");
     })
-  } 
+  }
   else {
     alert("파일을 선택해 주세요.")
   }
@@ -221,7 +221,7 @@ async function twoFactorAuthentication() {
         <th class="row"> <qrcode-vue :value="qrValue"></qrcode-vue></th>
           <!-- 시발..삽질..<img :src="'data:image/jpeg;base64,'+qrValue"/></th>-->
         <td>
-          <input type="text" v-model="qrCodeText"/> 
+          <input type="text" v-model="qrCodeText"/>
           <input type="button" value="전송" @click="twoFactorAuthentication"/>
         </td>
       </tr>
@@ -317,7 +317,7 @@ async function twoFactorAuthentication() {
 }
 .box {
     width: 150px;
-    height: 150px; 
+    height: 150px;
     border-radius: 70%;
     overflow: hidden;
 }

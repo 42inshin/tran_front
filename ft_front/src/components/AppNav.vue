@@ -8,7 +8,7 @@ import router from '@/router';
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/rank">랭킹</RouterLink>
-        <RouterLink to="/">대전</RouterLink>
+        <RouterLink to="/battle">대전</RouterLink>
         <RouterLink to="/">전적</RouterLink>
         <RouterLink to="/info">내정보</RouterLink>
         <RouterLink to="/about">채팅창</RouterLink>

@@ -22,7 +22,7 @@ const socketOptions = {
      }
    }
 };
-socket = io('http://localhost:7000', socketOptions);
+socket = io('http://localhost:5000', socketOptions);
 socket.on('connect', () => {
     socket.emit('join', 'join_data');
 });
@@ -32,16 +32,16 @@ socket.on('message', (data) => {
     items.value.push(data.nickname + ": " + data.message);
 });
 
-socket.on('disconnected', () => {
+socket.on('disconnect', () => {
     console.log('haha');
-    socket.emit('disconnected', 'haha');
+    socket.emit('disconnect', 'haha');
 });
 
 
 async function chatSend() {
     console.log(items);
     console.log( { nickname: store.data.nickname, message: message.value} );
-    socket.emit('send', { nickname: store.data.nickname, message: message.value}, response => 
+    socket.emit('send', { nickname: store.data.nickname, message: message.value}, response =>
         {
           console.log('send:', response);
         },
