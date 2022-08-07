@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/default.css" />
+    <style>
+      .wrapper {
+        position: relative;
+        min-width: 1240px;
+        width: 1240px;
+        height: 824px;
+        display: flex;
+        overflow: hidden;
+      }
+      .left_sidebar {
+        width: 397px;
+        height: 100%;
+        padding: 30px 30px 30px 45px;
+      }
+      .main {
+        width: 843px;
+        height: 100%;
+        background: var(--main);
+      }
+
+      /* nav */
+      .nav {
+        width: 240px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 30px;
+        right: 32px;
+      }
+      .nav li {
+        width: 46px;
+        height: 46px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+      }
+      .nav li a {
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+      }
+      .nav li:nth-child(1) {
+        background: var(--game);
+      }
+      .nav li:nth-child(1) a div {
+        width: 42px;
+        margin: 0 auto;
+        margin-top: -3px;
+        color: var(--game);
+      }
+
+      .nav li:nth-child(2) {
+        background: var(--notice);
+      }
+      .nav li:nth-child(2) a div {
+        width: 34px;
+        margin: 0 auto;
+        margin-top: 7px;
+        color: var(--notice);
+      }
+
+      .nav li:nth-child(3) {
+        background: var(--notice2);
+      }
+      .nav li:nth-child(3) a div {
+        width: 44px;
+        margin: 0 auto;
+        color: var(--notice2);
+      }
+
+      .nav li:nth-child(4) {
+        background: var(--notice3);
+      }
+      .nav li:nth-child(4) a div {
+        width: 32px;
+        margin: 0 auto;
+        margin-top: 7px;
+        color: var(--notice3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <ul class="nav">
+        <li>
+          <a href="#">
+            <div><img src="../image/game.svg" alt="game" />game</div></a
+          >
+        </li>
+        <li>
+          <a href="#">
+            <div><img src="../image/user_icon.svg" alt="user infomation" />info</div></a
+          >
+        </li>
+        <li>
+          <a href="#">
+            <div><img src="../image/rank.svg" alt="ranking" />rank</div></a
+          >
+        </li>
+        <li>
+          <a href="#">
+            <div><img src="../image/logout.svg" alt="logout" />logout</div></a
+          >
+        </li>
+      </ul>
+
+      <div class="left_sidebar"></div>
+      <div class="main"></div>
+    </div>
+  </body>
+</html>

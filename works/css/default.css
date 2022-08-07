@@ -67,7 +67,7 @@ body {
   justify-content: center;
   align-items: center; */
   /* user-select: none; */
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: var(--bg-blue);
   font-family: var(--font-family);
   color: var(--white);
