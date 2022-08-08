@@ -3,6 +3,7 @@ import LoginView from "../views/LoginView.vue";
 import AuthView from "../views/AuthView.vue";
 import SignUp from "../views/SignUp.vue"
 import Info from "../views/Info.vue"
+import WaitingRoom from "../views/WaitingRoom.vue"
 import Battle from "../views/Battle.vue"
 import { useUserStore } from "@/stores/user";
 import TwoFactor from "@/views/TwoFactor.vue";
@@ -45,6 +46,11 @@ const router = createRouter({
       path: "/battle",
       name: "Battle",
       component: Battle,
+    },
+    {
+      path: "/waitingRoom",
+      name: "WaitingRoom",
+      component: WaitingRoom,
     },
     {
       path: "/about",
