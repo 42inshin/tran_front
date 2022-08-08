@@ -32,9 +32,9 @@ socket.on('message', (data) => {
     items.value.push(data.nickname + ": " + data.message);
 });
 
-socket.on('disconnected', () => {
+socket.on('disconnect', () => {
     console.log('haha');
-    socket.emit('disconnected', 'haha');
+    socket.emit('disconnect', 'haha');
 });
 
 
